@@ -13,7 +13,7 @@ export default class Hero extends React.Component {
                         startups and entrepreneurs at lower cost than they would spend on space of their own. The hub
                         gives small businesses and ambitious entrepreneurs the platform to work and pursue their goals
                         in a revolutionary smart way.</p>
-                    <Link to="" className="btn btn-primary px-4">Learn More</Link>
+                    <Link to="" className="btn btn-primary mt-3 px-4">Learn More</Link>
                 </div>
             </div>
         )
