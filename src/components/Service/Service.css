@@ -1,8 +1,16 @@
-.service .title{
-    font-weight: 900;
-    font-size: 4em;
-    
+.title {
+  font-weight: 900;
+  font-size: 4em;
 }
-.service-card{
-    width: 25rem;;
+.service-card {
+  width: 25rem;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 2.5em;
+}
+
+.card-text, .mt-1 {
+  font-weight: 600;
 }
