@@ -1,0 +1,49 @@
+.work-hero {
+  background-image: url(../../images/training-hero.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+  padding-top: 30vh;
+}
+.work-hero-content-wrapper {
+  background: rgba(62, 64, 148, 0.8);
+  min-height: 40vh;
+}
+.work-hero-content-wrapper h1 {
+  font-weight: 800;
+  font-size: 2.8em;
+  margin: auto;
+  width: 80%;
+}
+
+.work-hero-content-wrapper p {
+  width: 70%;
+  margin: 0 auto;
+  font-weight: 500;
+}
+.workspace {
+  width: 90%;
+  margin: 0 auto;
+}
+.workspace-text {
+    margin: auto;
+}
+.workspace-form {
+  width: 35%;
+  margin: 0 auto;
+  min-height: 60vh;
+  box-shadow: -4px 4px 30px 2px rgba(0, 175, 239, 0.25);
+  border-radius: 30px;
+}
+.work-input {
+  width: 100%;
+  margin-top: 2vh;
+  height: 5vh;
+  border: 3px solid #00afef;
+  border-radius: 7px;
+  color: #a3a2a2;
+}
+.work-submit{
+    margin: 0 auto;
+    padding: 0.5em 2em;
+}

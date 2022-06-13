@@ -3,7 +3,7 @@ import "./Training.css";
 import Navbar from "../Navbar/Navbar";
 import toon from "../../images/toon.png"
 import Footer from "../Footer/Footer";
-
+import close from "../../images/close.png"
 
 export default class Training extends React.Component {
     render() {
@@ -47,12 +47,11 @@ export default class Training extends React.Component {
                         <button type="button" className="btn register btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             Register Now
                         </button>
-                        <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div className="modal fade .modal-fullscreen-xxl-down" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div className="modal-dialog">
                                 <div className="modal-content">
                                     <div className="modal-header">
-                                        <h5 className="modal-title" id="staticBackdropLabel">Modal title</h5>
-                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <img src={close} type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                                     </div>
                                     <div className="modal-body">
                                         <p className="text-center text-primary">Fill this form to
@@ -78,7 +77,7 @@ export default class Training extends React.Component {
                                     </div>
                                     <div className="modal-footer">
 
-                                        <a type="button" className="btn btn-primary" href="#a" data-bs-dismiss="modal">Submit</a>
+                                        <a type="button" className="btn btn-primary" href="#a" data-bs-target="#exampleModalToggle2">Confirm</a>
                                     </div>
                                 </div>
                             </div>
