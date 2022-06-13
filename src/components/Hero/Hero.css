@@ -1,7 +1,7 @@
 .hero {
   background: url("../../images/hero-img.png") no-repeat;
   background-size: cover;
-  min-height: 95vh;
+  min-height: 80vh;
   padding: 20vh 5vh;
 }
 
