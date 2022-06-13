@@ -1,0 +1,19 @@
+.event-hero{
+    background: url("../../images/event-2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding: 20vh 5vh;
+}
+
+.event-hero h1{
+    font-weight: 900;
+}
+.event-hero p{
+    margin-top: 5vh;
+    font-weight: 600;
+}
+.event-hero button{
+    margin-top: 5vh;
+    cursor: pointer;
+}

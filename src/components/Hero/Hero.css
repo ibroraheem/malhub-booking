@@ -2,25 +2,23 @@
   background: url("../../images/hero-img.png") no-repeat;
   background-size: cover;
   min-height: 95vh;
+  padding: 20vh 5vh;
 }
+
 
 .hero-content h1 {
   font-weight: 800;
-  padding-top: 20vh;
+  padding-top: 20vh 5vh;
   width: 100%;
-  font-size: 4em;
 }
 .hero-content p {
-  font-size: 1.5em;
-  font-weight: 500;
+  font-weight: 600;
   padding-top: 2vh;
-  width: 100%;
+
 }
 .hero-content .btn{
-  font-size: 1.2em;
-  font-weight: 500;
+  margin-top: 5vh;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }
 
 .btn-primary{

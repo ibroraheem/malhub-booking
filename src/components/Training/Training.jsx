@@ -28,21 +28,21 @@ export default class Training extends React.Component {
                 <div className="container training-word d-flex flex-wrap justify-content-between">
                     <img src={toon} alt='train' className="img-fluid toon col-lg-6 col-md-6 col-sm-12" />
                     <div className="mt-3 word-container col-lg-6 col-md-6 col-sm-12">
-                        <h3 className="what-title text-left pb-5">What we do;</h3>
-                        <h5 className="mt-2 word">
+                        <h2 className="what-title text-left pb-5">What we do;</h2>
+                        <h4 className="mt-2 word">
                             As an Innovation Hub
-                        </h5>
+                        </h4>
                         <p className="word-main">We are committed to building resilient innovation ecosystems in underserved university communities.</p>
-                        <h5 className="mt-2 word">
+                        <h4 className="mt-2 word">
                             As an Innovation Hub
-                        </h5>
+                        </h4>
                         <p className="word-main">We are committed to building resilient innovation ecosystems in underserved university communities.</p>
-                        <h5 className="mt-2 word">
+                        <h4 className="mt-2 word">
                             As an Innovation Hub
-                        </h5>
+                        </h4>
                         <p className="word-main">We are committed to building resilient innovation ecosystems in underserved university communities.</p>
                     </div>
-                    <div className="register-button">
+                    <div className="register-button mt-5">
 
                         <button type="button" className="btn register btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             Register Now

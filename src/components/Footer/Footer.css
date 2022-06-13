@@ -1,27 +1,35 @@
 .footer {
   background: #4d4c4c;
+  width: 100%;
   padding-top: 5vh;
   min-height: 32vh;
 }
-.footer ul{
+.footer ul {
   color: #fff;
-  padding:0;
+  padding: 0;
   margin: 0;
 }
-.footer p{
+.footer p {
   color: #fff;
   width: 34%;
 }
 
-.footer ul li{
+.footer ul li {
   list-style: none;
 }
-.footer ul li a{
+.footer ul li {
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
-i{
+i {
   border-radius: 50%;
   padding: 5px;
   font-size: 1em !important;
+  cursor: pointer;
+}
+
+.footer-wrapper {
+  justify-content: space-between;
+  margin: 0 auto;
 }

@@ -30,7 +30,7 @@ export default class Service extends React.Component {
                                     <h5 className="card-title">Event Space</h5>
                                     <p className="card-text">We provide training for startups and entrepreneurs to build their
                                         business and grow their business.</p>
-                                    <Link to="/training" className="btn btn-primary px-5 mt-1">Learn More</Link>
+                                    <Link to="/event" className="btn btn-primary px-5 mt-1">Learn More</Link>
                                 </div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@ export default class Service extends React.Component {
                                     <h5 className="card-title">Workspace</h5>
                                     <p className="card-text">We provide training for startups and entrepreneurs to build their
                                         business and grow their business.</p>
-                                    <Link to="/training" className="btn btn-primary px-5 mt-1">Learn More</Link>
+                                    <Link to="/workspace" className="btn btn-primary px-5 mt-1">Learn More</Link>
                                 </div>
                             </div>
                         </div>

@@ -1,49 +1,48 @@
-.work-hero {
+*.work-hero {
   background-image: url(../../images/training-hero.png);
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 90vh;
-  padding-top: 30vh;
+  min-height: 100vh;
+  padding: 20vh 5vh;
 }
 .work-hero-content-wrapper {
   background: rgba(62, 64, 148, 0.8);
-  min-height: 40vh;
 }
 .work-hero-content-wrapper h1 {
   font-weight: 800;
-  font-size: 2.8em;
   margin: auto;
-  width: 80%;
 }
 
 .work-hero-content-wrapper p {
-  width: 70%;
-  margin: 0 auto;
-  font-weight: 500;
+  margin-top: 5vh;
+  font-weight: 600;
 }
-.workspace {
+.workspace-content {
   width: 90%;
   margin: 0 auto;
+  margin-left: auto;
 }
 .workspace-text {
-    margin: auto;
+  margin: auto 0;
+}
+.workspace-text p {
+  width: 80%;
 }
 .workspace-form {
-  width: 35%;
   margin: 0 auto;
   min-height: 60vh;
   box-shadow: -4px 4px 30px 2px rgba(0, 175, 239, 0.25);
   border-radius: 30px;
 }
 .work-input {
-  width: 100%;
+  width: 80%;
   margin-top: 2vh;
-  height: 5vh;
+  height: 6vh;
   border: 3px solid #00afef;
   border-radius: 7px;
   color: #a3a2a2;
 }
-.work-submit{
-    margin: 0 auto;
-    padding: 0.5em 2em;
+.work-submit {
+  margin: 0 auto;
+  padding: 0.5em 2em;
 }

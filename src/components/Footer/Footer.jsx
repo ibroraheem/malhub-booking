@@ -4,8 +4,8 @@ import "./Footer.css"
 export default class Footer extends React.Component {
     render() {
         return (
-            <div className="footer container-fluid mt-3">
-                <div className="d-flex flex-wrap mx-5 footer-wrapper justify-content-between ">
+            <div className="footer container-fluid mt-5">
+                <div className="d-flex flex-wrap mx-5 footer-wrapper ">
                     <div className="about">
                         <h3 className="text-primary pt-3 ">About us</h3>
                         <ul>
