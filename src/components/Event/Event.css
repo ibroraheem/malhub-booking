@@ -17,3 +17,7 @@
     margin-top: 5vh;
     cursor: pointer;
 }
+.workspace-form p{
+    width: 80%;
+    margin: 0 auto;
+}
