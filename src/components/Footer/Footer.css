@@ -17,3 +17,6 @@
 .footer .icon, .footer li{
   cursor: pointer;
 }
+.footer-wrapper{
+  margin: 0 10vh;
+}

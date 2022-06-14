@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
     render() {
         return (
             <div className="footer container-fluid mt-5">
-                <div className="d-flex flex-wrap justify-content-between footer-wrapper container ">
+                <div className="d-flex flex-wrap justify-content-between footer-wrapper mx-5 ">
                     <div className="about col-lg-4 col-sm-12 col-md-12">
                         <h3 className="text-primary pt-3 ">About us</h3>
                         <ul>

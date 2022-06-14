@@ -15,29 +15,23 @@
   margin-top: 2vh;
 }
 
-.training-hero h1 {
-  font-weight: 800;
-}
 .training-hero p {
-  font-weight: 500;
+
   padding-bottom: 8vh;
 }
 .training-content {
-  font-weight: 600;
+
   margin: auto;
   padding-bottom: 10vh;
 }
 .what-title {
-  font-weight: 900;
-  font-size: 3em;
+    font-size: 3em;
 }
 .word-container {
   margin: auto;
-  font-weight: 700;
+  
 }
-.word-container h4 {
-  font-weight: 900;
-}
+
 .word-container p {
   width: 80%;
 }
@@ -67,7 +61,6 @@ select {
   margin-right: 5px;
 }
 .modal-body p {
-  font-weight: 400;
   font-size: 1.2em;
   width: 80%;
 }
