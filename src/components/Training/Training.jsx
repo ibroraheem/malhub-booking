@@ -6,64 +6,87 @@ import Footer from "../Footer/Footer";
 import close from "../../images/close.png"
 
 export default class Training extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         name: '',
-    //         phone: '',
-    //         email: '',
-    //         guardianName: '',
-    //         guardianPhone: '',
-    //         guardianAddress: '',
-    //         course: '',
-    //         submit: ''
-    //     }
-    //     this.handleNameChange = this.handleNameChange.bind(this)
-    //     this.handlePhoneChange = this.handlePhoneChange.bind(this)
-    //     this.handleEmailChange = this.handleEmailChange.bind(this)
-    //     this.handleGuardianNameChange = this.handleGuardianNameChange.bind(this)
-    //     this.handleGuardianPhoneChange = this.handleGuardianPhoneChange.bind(this)
-    //     this.handleGuardianAddressChange = this.handleGuardianAddressChange.bind(this)
-    //     this.handleCourseChange = this.handleCourseChange.bind(this)
-    //     this.handleSubmit = this.handleSubmit.bind(this)
-    // }
-    // handleNameChange(event) {
-    //     this.setState({ name: event.target.value })
-    // }
-    // handlePhoneChange(event) {
-    //     this.setState({ phone: event.target.value })
-    // }
-    // handleEmailChange(event) {
-    //     this.setState({ email: event.target.value })
-    // }
-    // handleGuardianNameChange(event) {
-    //     this.setState({ guardianName: event.target.value })
-    // }
-    // handleGuardianPhoneChange(event) {
-    //     this.setState({ guardianPhone: event.target.value })
-    // }
-    // handleGuardianAddressChange(event) {
-    //     this.setState({ guardianAddress: event.target.value })
-    // }
-    // handleSubmit(event) {
-    //     event.preventDefault()
-    //     this.setState({ submit: [{ name: this.state.name, phone: this.state.phone, email: this.state.email, guardianName: this.state.guardianName, guardianPhone: this.state.guardianPhone, guardianEmail: this.state.guardianAddress, course: this.state.course }] })
-    //     const formData = { name: this.state.name, phone: this.state.phone, email: this.state.email, guardianName: this.state.guardName, guardianPhone: this.state.guardianPhone, course: this.state.course }
-    //     fetch("", {
-    //         method: "POST",
-    //         body: JSON.stringify(formData),
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     }).then(res => {
-    //         if (res.status === 200) {
-    //             window.location.href = '/'
-    //         } else {
-    //             return;
-    //         }
-    //     })
-        
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            phone: '',
+            email: '',
+            guardianName: '',
+            guardianPhone: '',
+            guardianAddress: '',
+            course: '',
+            amount: '200000',
+            duration: '',
+            submit: ''
+        }
+        this.handleNameChange = this.handleNameChange.bind(this)
+        this.handlePhoneChange = this.handlePhoneChange.bind(this)
+        this.handleEmailChange = this.handleEmailChange.bind(this)
+        this.handleGuardianNameChange = this.handleGuardianNameChange.bind(this)
+        this.handleGuardianPhoneChange = this.handleGuardianPhoneChange.bind(this)
+        this.handleGuardianAddressChange = this.handleGuardianAddressChange.bind(this)
+        this.handleCourseChange = this.handleCourseChange.bind(this)
+        this.handleDurationChange = this.handleDurationChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+    handleNameChange(event) {
+        this.setState({ name: event.target.value })
+    }
+    handlePhoneChange(event) {
+        this.setState({ phone: event.target.value })
+    }
+    handleEmailChange(event) {
+        this.setState({ email: event.target.value })
+    }
+    handleGuardianNameChange(event) {
+        this.setState({ guardianName: event.target.value })
+    }
+    handleGuardianPhoneChange(event) {
+        this.setState({ guardianPhone: event.target.value })
+    }
+    handleGuardianAddressChange(event) {
+        this.setState({ guardianAddress: event.target.value })
+    }
+    handleCourseChange(event) {
+        this.setState({ course: event.target.value })
+    }
+    handleAmountChange(event) {
+        this.setState({ amount: event.target.value })
+    }
+    handleDurationChange(event) {
+        this.setState({ duration: event.target.value })
+    }
+    async handleSubmit(event) {
+        event.preventDefault()
+        this.setState({ submit: [{ name: this.state.name, phone: this.state.phone, email: this.state.email, guardianName: this.state.guardianName, guardianPhone: this.state.guardianPhone, guardianAddress: this.state.guardianAddress, course: this.state.course, duration: this.state.duration, amount: this.state.amount }] })
+        const formData =
+        {
+            name: this.state.name,
+            phone: this.state.phone,
+            email: this.state.email,
+            guardianName: this.state.guardianName,
+            guardianPhone: this.state.guardianPhone,
+            guardianAddress: this.state.guardianAddress,
+            course: this.state.course,
+            duration: this.state.duration,
+            fee: this.state.amount
+        }
+        await fetch("https://ibro-booking-api.herokuapp.com/course", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            if (res.status === 200 || res.message === "ok") {
+                window.location.href = '/'
+            } else {
+                return;
+            }
+        })
+
+    }
 
     render() {
         return (
@@ -106,7 +129,7 @@ export default class Training extends React.Component {
                         <button type="button" className="btn register btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                             Register Now
                         </button>
-                        <div className="modal fade .modal-fullscreen-xxl-down" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div className="modal fade .modal-fullscreen-xxl-down" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div className="modal-dialog">
                                 <div className="modal-content">
                                     <div className="modal-header">
@@ -115,28 +138,29 @@ export default class Training extends React.Component {
                                     <div className="modal-body">
                                         <p className="text-center text-primary">Fill this form to
                                             register with us now</p>
-                                        <form>
-                                            <input type="text" className="form-input ps-3" placeholder="Name" />
-                                            <input type="text" className="form-input ps-3" placeholder="Email" />
-                                            <input type="text" className="form-input ps-3" placeholder="Phone Number" />
-                                            <input type="text" className="form-input ps-3" placeholder="Guardian Name" />
-                                            <input type="text" className="form-input ps-3" placeholder="Guardian Phone" />
-                                            <input type="text" className="form-input ps-3" placeholder="Guardian Address" />
-                                            <select className="form-input ps-3" placeholder="Course">
+                                        <form onSubmit={this.handleSubmit}>
+                                            <input type="text" className="form-input ps-3" onChange={this.handleNameChange} placeholder="Name" />
+                                            <input type="text" className="form-input ps-3" onChange={this.handleEmailChange} placeholder="Email" />
+                                            <input type="text" className="form-input ps-3" onChange={this.handlePhoneChange} placeholder="Phone Number" />
+                                            <input type="text" className="form-input ps-3" onChange={this.handleGuardianNameChange} placeholder="Guardian Name" />
+                                            <input type="text" className="form-input ps-3" onChange={this.handleGuardianPhoneChange} placeholder="Guardian Phone" />
+                                            <input type="text" className="form-input ps-3" onChange={this.handleGuardianAddressChange} placeholder="Guardian Address" />
+                                            <select className="form-input ps-3" onChange={this.handleCourseChange} placeholder="Course">
                                                 <option>Course</option>
-                                                <option>Front End Development</option>
-                                                <option>backend Development</option>
-                                                <option>Fullstack Developmet</option>
-                                                <option>Product Design</option>
+                                                <option value="Front End Development">Front End Development</option>
+                                                <option value="Backend Development">Backend Development</option>
+                                                <option value="Fullstack Development">Fullstack Developmet</option>
+                                                <option value="Product Design">Product Design</option>
                                             </select>
-                                            <select className="form-input ps-3" placeholder="Duration">
+                                            <select className="form-input ps-3" onChange={this.handleDurationChange} placeholder="Duration">
                                                 <option>Duration</option>
+                                                <option value="3 months">3 Months</option>
                                             </select>
-                                        </form>
-                                    </div>
-                                    <div className="modal-footer">
+                                            <div className="modal-footer">
+                                                <button type="submit" className="btn btn-primary" href="#a" data-bs-target="#exampleModalToggle2">Confirm</button>
 
-                                        <a type="button" className="btn btn-primary" href="#a" data-bs-target="#exampleModalToggle2">Confirm</a>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

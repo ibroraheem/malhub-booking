@@ -10,13 +10,14 @@ body{
 
 
 .hero-content h1 {
-  font-family: ;
   font-weight: 800;
+  font-size: 3em;
   padding-top: 20vh 5vh;
   width: 100%;
 }
 .hero-content p {
-  font-weight: 600;
+  font-size: 1.2em;
+  
   padding-top: 2vh;
 
 }

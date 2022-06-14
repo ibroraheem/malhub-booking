@@ -6,7 +6,7 @@ export default class Navbar extends React.Component {
     render() {
         return (
             <nav className="navbar navbar-light bg-light">
-                <div className="container-fluid mx-5">
+                <div className="container-fluid mx-3 px-4">
                     <Link className="navbar-brand" to="/">
                         <img src={logo} alt="logo" />
                     </Link>

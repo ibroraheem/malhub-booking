@@ -2,8 +2,10 @@
   background-image: url(../../images/training-hero.png);
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 100vh;
-  padding: 20vh 5vh;
+  height: 90vh;
+  padding: 0vh 5vh;
+  display: flex;
+  align-items: center;
 }
 .work-hero-content-wrapper {
   background: rgba(62, 64, 148, 0.8);
@@ -14,8 +16,7 @@
 }
 
 .work-hero-content-wrapper p {
-  margin-top: 5vh;
-  font-weight: 600;
+  margin-top: 5vh
 }
 .workspace-content {
   width: 90%;
