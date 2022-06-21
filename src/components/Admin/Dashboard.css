@@ -16,7 +16,8 @@ tr:nth-child(even) {
 }
 .dashboard-btn-container {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
