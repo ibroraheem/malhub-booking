@@ -42,7 +42,7 @@ export default class App extends React.Component {
         this.setState({ submit: [{ name: this.state.name, email: this.state.email, phone: this.state.phone, from: this.state.from, to: this.state.to, amount: this.state.amount }] })
         const formData = {
             name: this.state.name,
-            email: this.state.email,
+            email: this.state.email.toLowerCase(),
             phone: this.state.phone,
             from: this.state.from,
             to: this.state.to,
@@ -101,8 +101,8 @@ export default class App extends React.Component {
                                 <input type="text" className="work-input ps-3 my-3" onChange={this.handleNameChange} placeholder="Name" />
                                 <input type="email" className="work-input ps-3 my-3" onChange={this.handleEmailChange} placeholder="Email" />
                                 <input type="text" className="work-input ps-3 my-3" onChange={this.handlePhoneChange} placeholder="Phone" />
-                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleFromChange} placeholder="From" />
-                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleToChange} placeholder="To" />
+                                <input type="date" className="work-input ps-3 my-3" onChange={this.handleFromChange} />
+                                <input type="date" className="work-input ps-3 my-3" onChange={this.handleToChange} />
                                 <br />
                                 <button className="btn btn-primary mt-5 work-submit" >Confirm</button>
                             </form>

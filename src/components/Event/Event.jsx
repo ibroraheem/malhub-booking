@@ -48,7 +48,7 @@ export default class Event extends React.Component {
         this.setState({ submit: [{ name: this.state.name, email: this.state.email, phone: this.state.email, date: this.state.state, duration: this.state.duration, type: this.state.type }] })
         const formData = {
             name: this.state.name,
-            email: this.state.email,
+            email: this.state.email.toLowerCase(),
             phone: this.state.phone,
             date: this.state.date,
             duration: this.state.duration,
@@ -98,7 +98,7 @@ export default class Event extends React.Component {
                                 <input type="text" className="work-input ps-3 my-3" placeholder="Name" />
                                 <input type="email" className="work-input ps-3 my-3" placeholder="Email" />
                                 <input type="text" className="work-input ps-3 my-3" placeholder="Phone" />
-                                <input type="text" className="work-input ps-3 my-3" placeholder="Event Date" />
+                                <input type="date" className="work-input ps-3 my-3" placeholder="Event Date" />
                                 <input type="text" className="work-input ps-3 my-3" placeholder="Event Hours" />
                                 <input type="text" className="work-input ps-3 my-3" placeholder="Event Type" />
                                 <input type="text" className="work-input ps-3 my-3" placeholder="Duration" /> <br />
