@@ -61,7 +61,11 @@ export default class Event extends React.Component {
                 'Content-Type': 'application/json'
             }
         }).then(res => {
+            res.json()
+        })
+        .then(res => {
             if (res.status === 200 || res.message === "ok") {
+                console.log(res.url)
                 window.location.href = "/"
             } else {
                 return

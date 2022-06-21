@@ -19,7 +19,6 @@ export default class Congrats extends React.Component {
                                 <h2>Congratulations</h2>
                                 <p>Your registration has successfully been recorded.
                                     you can now further to our office to complete your registration.</p>
-
                             </div>
                         </div>
                     </div>

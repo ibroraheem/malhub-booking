@@ -55,12 +55,13 @@ export default class App extends React.Component {
                 "Content-Type": 'application/json'
             }
         }).then(res => {
-            if (res.status === 200 || res.message === 'ok') {
-                window.location.href = '/'
-            } else {
-                return;
-            }
+            res.json()
         })
+            .then(res => {
+                console.log(res.url)
+               
+            })
+
     }
 
 

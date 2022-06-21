@@ -21,9 +21,11 @@ export default class Dashboard extends React.Component {
             .then(result => {
                 this.setState({ bookedspaces: result.workspace });
                 this.setState({ loading: false })
+                console.log(result)
             },
                 (error) => {
                     console.log(error);
+
                 }
             )
     }
@@ -33,7 +35,7 @@ export default class Dashboard extends React.Component {
             .then(result => {
                 this.setState({ events: result.events });
                 this.setState({ loading: false })
-                console.log(result)
+
             },
                 (error) => {
                     console.log(error);
@@ -68,9 +70,9 @@ export default class Dashboard extends React.Component {
             <div className="dashboard container" >
                 <h1 className="text-center py-3">Dashboard</h1>
                 <div className="dashboard-btn-container">
-                    <button className="btn btn-primary" onClick={() => this.setState({ space: true, event: false, training: false })}>Booked Spaces</button>
-                    <button className="btn btn-primary" onClick={() => this.setState({ event: true, space: false, training: false })}>Booked Events</button>
-                    <button className="btn btn-primary my-3" onClick={() => this.setState({ training: true, space: false, event: false })}>Trainees</button>
+                    <button className="btn btn-primary my-3 py-2" onClick={() => this.setState({ space: true, event: false, training: false })}>Booked Spaces</button>
+                    <button className="btn btn-primary my-3 py-2" onClick={() => this.setState({ event: true, space: false, training: false })}>Booked Events</button>
+                    <button className="btn btn-primary my-3 py-2" onClick={() => this.setState({ training: true, space: false, event: false })}>Trainees</button>
 
                 </div>
                 {this.state.training && !this.state.space && !this.state.event ?
@@ -140,7 +142,7 @@ export default class Dashboard extends React.Component {
                                 <tr>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Booking Expiry</th>
+                                    <th>Booking Expires</th>
                                     <th>Booking Status</th>
                                 </tr>
                             </thead>
@@ -150,7 +152,9 @@ export default class Dashboard extends React.Component {
                                         <td>{bookedspace.name}</td>
                                         <td>{bookedspace.email}</td>
                                         <td>{bookedspace.to}</td>
-                                        <td>Active</td>
+                                        <td>{bookedspace.status}</td>
+
+
                                     </tr>
                                 )}
 
