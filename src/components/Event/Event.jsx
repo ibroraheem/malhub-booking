@@ -104,7 +104,6 @@ export default class Event extends React.Component {
                                 <input type="email" className="work-input ps-3 my-3" placeholder="Email" />
                                 <input type="text" className="work-input ps-3 my-3" placeholder="Phone" />
                                 <input type="date" className="work-input ps-3 my-3" placeholder="Event Date" />
-                                <input type="text" className="work-input ps-3 my-3" placeholder="Event Hours" />
                                 <input type="text" className="work-input ps-3 my-3" placeholder="Event Type" />
                                 <input type="text" className="work-input ps-3 my-3" placeholder="Duration" /> <br />
                                 <button className="btn btn-primary mt-5 work-submit" >Confirm</button>
