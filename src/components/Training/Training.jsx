@@ -152,7 +152,7 @@ export default class Training extends React.Component {
                                                 <option value="Fullstack Development">Fullstack Developmet</option>
                                                 <option value="Product Design">Product Design</option>
                                             </select>
-                                            <input class="form-control" type="text" placeholder="Readonly input here…" readonly />
+                                            <input class="form-input ps-3" placeholder="3 Months" readonly />
                                             <div className="modal-footer">
                                                 <button type="submit" className="btn btn-primary" href="#a" data-bs-target="#exampleModalToggle2">Confirm</button>
                                             </div>
