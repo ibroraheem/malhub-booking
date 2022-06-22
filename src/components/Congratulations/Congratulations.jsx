@@ -16,7 +16,7 @@ export default class Congrats extends React.Component {
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <img src={close} alt="close" className="close" data-dismiss="modal" />
                         </div>
                         {this.props.qrURL ?
                             <div className="modal-body">
