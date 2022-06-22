@@ -37,14 +37,14 @@ export default class Login extends React.Component {
             return res.json()
         }).then((res) => {
             console.log(res)
-                if (res.admin) {
-                    console.log("ok")
-                    localStorage.setItem("token", res.token)
-               
-                } else {
-                    return
-                }
-            })
+            if (res.admin) {
+                console.log("ok")
+                localStorage.setItem("token", res.token)
+                window.location.href = "/admin/dashboard"
+            } else {
+                return
+            }
+        })
     }
     render() {
         return (

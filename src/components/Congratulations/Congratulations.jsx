@@ -12,8 +12,8 @@ export default class Congrats extends React.Component {
     }
     render() {
         return (
-            <div className="modal fade modall" id="ResponseModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
+            <div className="modal fade" id="ResponseModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modall">
                     <div className="modal-content">
                         <div className="modal-header">
                             <img src={close} alt="close" className="close" data-dismiss="modal" />

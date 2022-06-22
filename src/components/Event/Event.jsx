@@ -56,7 +56,7 @@ export default class Event extends React.Component {
             duration: this.state.duration,
             type: this.state.type
         }
-        await fetch("https://ibro-booking-api.herokuapp.com/event", {
+        await fetch("https://ibro-booking-api.herokuapp.com//event", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {
