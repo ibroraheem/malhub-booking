@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer"
 import "./Workspace.css"
+import Congrats from '../Congratulations/Congratulations';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -12,8 +13,8 @@ export default class App extends React.Component {
             phone: '',
             from: '',
             to: '',
-            amount: '20000',
-            submit: ''
+            submit: '',
+            qrURL: ''
         }
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handleEmailChange = this.handleEmailChange.bind(this)
@@ -45,8 +46,7 @@ export default class App extends React.Component {
             email: this.state.email.toLowerCase(),
             phone: this.state.phone,
             from: this.state.from,
-            to: this.state.to,
-            amount: this.state.amount
+            to: this.state.to
         }
         await fetch("https://ibro-booking-api.herokuapp.com/workspace", {
             method: "POST",
@@ -55,11 +55,14 @@ export default class App extends React.Component {
                 "Content-Type": 'application/json'
             }
         }).then(res => {
-            res.json()
+            return res.json()
         })
-            .then(res => {
-                console.log(res.url)
-               
+            .then(data => {
+                if (data.url) {
+                    this.setState({ qrURL: data.url })
+                } else {
+                    return;
+                }
             })
 
     }
@@ -105,8 +108,9 @@ export default class App extends React.Component {
                                 <input type="date" className="work-input ps-3 my-3" onChange={this.handleFromChange} />
                                 <input type="date" className="work-input ps-3 my-3" onChange={this.handleToChange} />
                                 <br />
-                                <button className="btn btn-primary mt-5 work-submit" >Confirm</button>
+                                <button className="btn btn-primary mt-5 work-submit" type="submit" data-bs-toggle="modal" data-bs-target="#ResponseModal">Confirm</button>
                             </form>
+                            <Congrats qrURL={this.state.qrURL} />
                         </div>
 
                     </div>

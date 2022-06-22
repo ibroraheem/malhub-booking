@@ -4,6 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import toon from "../../images/toon.png"
 import Footer from "../Footer/Footer";
 import close from "../../images/close.png"
+import Congrats from "../Congratulations/Congratulations";
 
 export default class Training extends React.Component {
     constructor(props) {
@@ -16,9 +17,8 @@ export default class Training extends React.Component {
             guardianPhone: '',
             guardianAddress: '',
             course: '',
-            amount: '200000',
-            duration: '',
-            submit: ''
+            submit: '',
+            qrURL: ''
         }
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handlePhoneChange = this.handlePhoneChange.bind(this)
@@ -27,7 +27,7 @@ export default class Training extends React.Component {
         this.handleGuardianPhoneChange = this.handleGuardianPhoneChange.bind(this)
         this.handleGuardianAddressChange = this.handleGuardianAddressChange.bind(this)
         this.handleCourseChange = this.handleCourseChange.bind(this)
-        this.handleDurationChange = this.handleDurationChange.bind(this)
+   
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     handleNameChange(event) {
@@ -51,12 +51,8 @@ export default class Training extends React.Component {
     handleCourseChange(event) {
         this.setState({ course: event.target.value })
     }
-    handleAmountChange(event) {
-        this.setState({ amount: event.target.value })
-    }
-    handleDurationChange(event) {
-        this.setState({ duration: event.target.value })
-    }
+    
+  
     async handleSubmit(event) {
         event.preventDefault()
         this.setState({ submit: [{ name: this.state.name, phone: this.state.phone, email: this.state.email, guardianName: this.state.guardianName, guardianPhone: this.state.guardianPhone, guardianAddress: this.state.guardianAddress, course: this.state.course, duration: this.state.duration, amount: this.state.amount }] })
@@ -69,8 +65,7 @@ export default class Training extends React.Component {
             guardianPhone: this.state.guardianPhone,
             guardianAddress: this.state.guardianAddress,
             course: this.state.course,
-            duration: this.state.duration,
-            fee: this.state.amount
+           
         }
         await fetch("https://ibro-booking-api.herokuapp.com/course", {
             method: "POST",
@@ -79,16 +74,17 @@ export default class Training extends React.Component {
                 'Content-Type': 'application/json'
             }
         }).then(res => {
-            res.json()
+            return res.json()
         })
-        .then(res => {
-            if (res.status === 200 || res.message === "ok") {
-                console.log(res.url)
-                window.location.href = '/'
-            } else {
-                return;
-            }
-        })
+            .then(data=> {
+                if(data.url){
+                    this.setState({qrURL: data.url})
+
+                } else{
+                    return;
+                }
+
+            })
 
     }
 
@@ -156,15 +152,12 @@ export default class Training extends React.Component {
                                                 <option value="Fullstack Development">Fullstack Developmet</option>
                                                 <option value="Product Design">Product Design</option>
                                             </select>
-                                            <select className="form-input ps-3" onChange={this.handleDurationChange} placeholder="Duration">
-                                                <option>Duration</option>
-                                                <option value="3 months">3 Months</option>
-                                            </select>
+                                            <input class="form-control" type="text" placeholder="Readonly input here…" readonly />
                                             <div className="modal-footer">
                                                 <button type="submit" className="btn btn-primary" href="#a" data-bs-target="#exampleModalToggle2">Confirm</button>
-
                                             </div>
                                         </form>
+                                        <Congrats qrURL={this.state.qrURL} />
                                     </div>
                                 </div>
                             </div>

@@ -23,10 +23,10 @@ export default class Login extends React.Component {
         event.preventDefault();
         this.setState({ submit: [{ email: this.state.email, password: this.state.password }] })
         const formData = {
-            email: this.state.email.toLowerCase(),
+            email: this.state.email,
             password: this.state.password
         }
-        await fetch("http://localhost:8000/admin/login", {
+        await fetch("https://ibro-booking-api.herokuapp.com/admin/login", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {
@@ -40,10 +40,7 @@ export default class Login extends React.Component {
                 if (res.admin) {
                     console.log("ok")
                     localStorage.setItem("token", res.token)
-                   const token = localStorage.getItem("token")
-                    if(token) {
-                        window.location.href = "/admin/dashboard"
-                    }
+               
                 } else {
                     return
                 }

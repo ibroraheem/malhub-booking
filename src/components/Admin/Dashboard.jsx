@@ -16,12 +16,12 @@ export default class Dashboard extends React.Component {
         }
     }
     getBookedspaces() {
-        fetch("http://localhost:8000/bookedspaces")
+        fetch("https://ibro-booking-api.herokuapp.com/bookedspaces")
             .then(res => res.json())
             .then(result => {
                 this.setState({ bookedspaces: result.workspace });
                 this.setState({ loading: false })
-                console.log(result)
+
             },
                 (error) => {
                     console.log(error);
@@ -30,7 +30,7 @@ export default class Dashboard extends React.Component {
             )
     }
     getEventspaces() {
-        fetch("http://localhost:8000/bookedevents")
+        fetch("https://ibro-booking-api.herokuapp.com/bookedevents")
             .then(res => res.json())
             .then(result => {
                 this.setState({ events: result.events });
@@ -43,7 +43,7 @@ export default class Dashboard extends React.Component {
             )
     }
     getTrainees() {
-        fetch("http://localhost:8000/trainees")
+        fetch("https://ibro-booking-api.herokuapp.com/trainees")
             .then(res => res.json())
             .then(result => {
                 this.setState({ trainees: result.trainees });
@@ -55,6 +55,7 @@ export default class Dashboard extends React.Component {
                 }
             )
     }
+
     componentDidMount() {
         this.setState({ loading: true })
         this.getBookedspaces();
@@ -88,7 +89,6 @@ export default class Dashboard extends React.Component {
                                     <th>Guardian Phone</th>
                                     <th>Guardian Address</th>
                                     <th>Course</th>
-                                    <th>Duration</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -101,7 +101,6 @@ export default class Dashboard extends React.Component {
                                         <td>{trainees.guardianPhone}</td>
                                         <td>{trainees.guardianAddress}</td>
                                         <td>{trainees.course}</td>
-                                        <td>{trainees.duration}</td>
                                     </tr>
                                 )}
 
@@ -127,10 +126,10 @@ export default class Dashboard extends React.Component {
                                     <tr key={events._id}>
                                         <td>{events.name}</td>
                                         <td>{events.email}</td>
-                                        <td>{events.date}</td>
+                                        <td>{new Date(events.date).toDateString()}</td>
                                         <td>{events.duration}</td>
                                         <td>{events.type}</td>
-                                        <td>{events.happened}</td>
+                                        {new Date().getDate() > events.date ? <td>Yes</td> : <td>No</td>}
                                     </tr>
                                 )}
 
@@ -151,10 +150,8 @@ export default class Dashboard extends React.Component {
                                     <tr key={bookedspace._id}>
                                         <td>{bookedspace.name}</td>
                                         <td>{bookedspace.email}</td>
-                                        <td>{bookedspace.to}</td>
-                                        <td>{bookedspace.status}</td>
-
-
+                                        <td>{new Date(bookedspace.to).toDateString()}</td>
+                                        {new Date() < new Date(bookedspace.to) ? <td>Active</td> : <td>Expired</td>}
                                     </tr>
                                 )}
 

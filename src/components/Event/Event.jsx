@@ -2,6 +2,7 @@ import React from "react";
 import "./Event.css"
 import Navbar from "../Navbar/Navbar"
 import Footer from "../Footer/Footer";
+import Congrats from "../Congratulations/Congratulations";
 
 
 export default class Event extends React.Component {
@@ -14,7 +15,8 @@ export default class Event extends React.Component {
             date: "",
             duration: '',
             type: '',
-            submit: ''
+            submit: '',
+            qrURL: ''
         }
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handleEmailChange = this.handleEmailChange.bind(this)
@@ -63,14 +65,13 @@ export default class Event extends React.Component {
         }).then(res => {
             res.json()
         })
-        .then(res => {
-            if (res.status === 200 || res.message === "ok") {
-                console.log(res.url)
-                window.location.href = "/"
-            } else {
-                return
-            }
-        })
+            .then(data => {
+                if (data.url) {
+                    this.setState({ qrURL: data.url })
+                } else {
+                    return;
+                }
+            })
     }
     render() {
         return (
@@ -108,6 +109,7 @@ export default class Event extends React.Component {
                                 <input type="text" className="work-input ps-3 my-3" placeholder="Duration" /> <br />
                                 <button className="btn btn-primary mt-5 work-submit" >Confirm</button>
                             </form>
+                            <Congrats qrURL="{this.state.qrURL}" />
                         </div>
                     </div>
                 </div>

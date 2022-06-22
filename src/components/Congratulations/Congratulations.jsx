@@ -4,23 +4,35 @@ import "./Congratulations.css"
 import close from "../../images/closee.png";
 
 export default class Congrats extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        }
+    }
     render() {
         return (
-            <div>
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modall">
-                        <div class="modal-content">
-                            <div class="modal-header">
-
-                                <img data-bs-dismiss="modal" aria-label="Close" src={close} />
-                            </div>
-                            <div class="modal-body ">
-                                <img src={cong} alt="congrats" />
-                                <h2>Congratulations</h2>
-                                <p>Your registration has successfully been recorded.
-                                    you can now further to our office to complete your registration.</p>
-                            </div>
+            <div className="modal fade modall" id="ResponseModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+                        {this.props.qrURL ?
+                            <div className="modal-body">
+                                <div className="text-center">
+                                    <img src={cong} width={200} alt="congrats" />
+                                </div>
+                                <div className="p-3">
+                                    <h2>Congratulations</h2>
+                                    <p style={{ margin: 0 }}>Your registration has successfully been recorded.
+                                        you can now further to our office to complete your registration.</p>
+                                </div>
+                                <img data-bs-dismiss="modal" aria-label="Close" src={this.props.qrURL} alt="Congratulation code" />
+                            </div> : <div className="p-3">
+                                <h2>Loading...</h2>
+                                <p style={{ margin: 0 }}>Loading Response. Please wait...</p>
+                            </div>}
                     </div>
                 </div>
             </div>
