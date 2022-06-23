@@ -104,12 +104,12 @@ export default class Event extends React.Component {
                             <p className="text-center text-primary">Fill This Form To
                                 Book A Space With Us</p>
                             <form className="form px-3 py-3 text-center" onSubmit={this.handleSubmit}>
-                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleNameChange} placeholder="Name" />
-                                <input type="email" className="work-input ps-3 my-3" onChange={this.handleEmailChange} placeholder="Email" />
-                                <input type="text" className="work-input ps-3 my-3" onChange={this.handlePhoneChange} placeholder="Phone" />
-                                <input type="date" className="work-input ps-3 my-3" onChange={this.handleDateChange} placeholder="Event Date" />
-                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleTypeChange} placeholder="Event Type" />
-                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleDurationChange} placeholder="Duration" /> <br />
+                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleNameChange} placeholder="Name" required />
+                                <input type="email" className="work-input ps-3 my-3" onChange={this.handleEmailChange} placeholder="Email" required />
+                                <input type="text" className="work-input ps-3 my-3" onChange={this.handlePhoneChange} placeholder="Phone" required />
+                                <input type="date" className="work-input ps-3 my-3" onChange={this.handleDateChange} placeholder="Event Date" required />
+                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleTypeChange} placeholder="Event Type" required />
+                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleDurationChange} placeholder="Duration" required /> <br />
                                 <button className="btn btn-primary mt-5 work-submit" type="submit" data-bs-toggle="modal" data-bs-target="#ResponseModal">Confirm</button>
                             </form>
                             <Congrats qrURL={this.state.qrURL} />

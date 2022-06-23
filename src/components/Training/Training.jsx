@@ -138,13 +138,13 @@ export default class Training extends React.Component {
                                         <p className="text-center text-primary">Fill this form to
                                             register with us now</p>
                                         <form onSubmit={this.handleSubmit}>
-                                            <input type="text" className="form-input ps-3" onChange={this.handleNameChange} placeholder="Name" />
-                                            <input type="text" className="form-input ps-3" onChange={this.handleEmailChange} placeholder="Email" />
-                                            <input type="text" className="form-input ps-3" onChange={this.handlePhoneChange} placeholder="Phone Number" />
-                                            <input type="text" className="form-input ps-3" onChange={this.handleGuardianNameChange} placeholder="Guardian Name" />
-                                            <input type="text" className="form-input ps-3" onChange={this.handleGuardianPhoneChange} placeholder="Guardian Phone" />
-                                            <input type="text" className="form-input ps-3" onChange={this.handleGuardianAddressChange} placeholder="Guardian Address" />
-                                            <select className="form-input ps-3" onChange={this.handleCourseChange} placeholder="Course">
+                                            <input type="text" className="form-input ps-3" onChange={this.handleNameChange} placeholder="Name" required />
+                                            <input type="text" className="form-input ps-3" onChange={this.handleEmailChange} placeholder="Email" required />
+                                            <input type="text" className="form-input ps-3" onChange={this.handlePhoneChange} placeholder="Phone Number" required />
+                                            <input type="text" className="form-input ps-3" onChange={this.handleGuardianNameChange} placeholder="Guardian Name" required />
+                                            <input type="text" className="form-input ps-3" onChange={this.handleGuardianPhoneChange} placeholder="Guardian Phone" required />
+                                            <input type="text" className="form-input ps-3" onChange={this.handleGuardianAddressChange} placeholder="Guardian Address" required />
+                                            <select className="form-input ps-3" onChange={this.handleCourseChange} placeholder="Course" required>
                                                 <option>Course</option>
                                                 <option value="Front End Development">Front End Development</option>
                                                 <option value="Backend Development">Backend Development</option>

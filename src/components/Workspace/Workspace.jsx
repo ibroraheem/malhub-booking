@@ -48,7 +48,7 @@ export default class App extends React.Component {
             from: this.state.from,
             to: this.state.to
         }
-    
+
         await fetch("https://ibro-booking-api.herokuapp.com/workspace", {
             method: "POST",
             body: JSON.stringify(formData),
@@ -103,11 +103,11 @@ export default class App extends React.Component {
                                 Book A Space With Us</p>
 
                             <form className="form px-3 py-3 text-center" onSubmit={this.handleSubmit}>
-                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleNameChange} placeholder="Name" />
-                                <input type="email" className="work-input ps-3 my-3" onChange={this.handleEmailChange} placeholder="Email" />
-                                <input type="text" className="work-input ps-3 my-3" onChange={this.handlePhoneChange} placeholder="Phone" />
-                                <input type="date" className="work-input ps-3 my-3" onChange={this.handleFromChange} />
-                                <input type="date" className="work-input ps-3 my-3" onChange={this.handleToChange} />
+                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleNameChange} placeholder="Name" required />
+                                <input type="email" className="work-input ps-3 my-3" onChange={this.handleEmailChange} placeholder="Email" required />
+                                <input type="text" className="work-input ps-3 my-3" onChange={this.handlePhoneChange} placeholder="Phone" required />
+                                <input type="date" className="work-input ps-3 my-3" onChange={this.handleFromChange} required />
+                                <input type="date" className="work-input ps-3 my-3" onChange={this.handleToChange} required />
                                 <br />
                                 <button className="btn btn-primary mt-5 work-submit" type="submit" data-bs-toggle="modal" data-bs-target="#ResponseModal">Confirm</button>
                             </form>
