@@ -48,6 +48,7 @@ export default class App extends React.Component {
             from: this.state.from,
             to: this.state.to
         }
+    
         await fetch("https://ibro-booking-api.herokuapp.com/workspace", {
             method: "POST",
             body: JSON.stringify(formData),

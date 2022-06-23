@@ -9,10 +9,10 @@ export default class Event extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
+            name: '',
             email: '',
             phone: '',
-            date: "",
+            date: '',
             duration: '',
             type: '',
             submit: '',
@@ -50,22 +50,25 @@ export default class Event extends React.Component {
         this.setState({ submit: [{ name: this.state.name, email: this.state.email, phone: this.state.email, date: this.state.state, duration: this.state.duration, type: this.state.type }] })
         const formData = {
             name: this.state.name,
-            email: this.state.email.toLowerCase(),
+            email: this.state.email,
             phone: this.state.phone,
             date: this.state.date,
             duration: this.state.duration,
             type: this.state.type
         }
-        await fetch("https://ibro-booking-api.herokuapp.com//event", {
+
+        await fetch("https://ibro-booking-api.herokuapp.com/event", {
             method: "POST",
             body: JSON.stringify(formData),
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": 'application/json'
             }
+
         }).then(res => {
-            res.json()
+            return res.json()
         })
             .then(data => {
+
                 if (data.url) {
                     this.setState({ qrURL: data.url })
                 } else {
@@ -73,6 +76,7 @@ export default class Event extends React.Component {
                 }
             })
     }
+
     render() {
         return (
             <div>
@@ -99,16 +103,16 @@ export default class Event extends React.Component {
                         <div className="workspace-form py-5 mt-4 col-lg-6 col-md-12 col-sm-12">
                             <p className="text-center text-primary">Fill This Form To
                                 Book A Space With Us</p>
-                            <form className="form px-3 py-3 text-center ">
-                                <input type="text" className="work-input ps-3 my-3" placeholder="Name" />
-                                <input type="email" className="work-input ps-3 my-3" placeholder="Email" />
-                                <input type="text" className="work-input ps-3 my-3" placeholder="Phone" />
-                                <input type="date" className="work-input ps-3 my-3" placeholder="Event Date" />
-                                <input type="text" className="work-input ps-3 my-3" placeholder="Event Type" />
-                                <input type="text" className="work-input ps-3 my-3" placeholder="Duration" /> <br />
-                                <button className="btn btn-primary mt-5 work-submit" >Confirm</button>
+                            <form className="form px-3 py-3 text-center" onSubmit={this.handleSubmit}>
+                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleNameChange} placeholder="Name" />
+                                <input type="email" className="work-input ps-3 my-3" onChange={this.handleEmailChange} placeholder="Email" />
+                                <input type="text" className="work-input ps-3 my-3" onChange={this.handlePhoneChange} placeholder="Phone" />
+                                <input type="date" className="work-input ps-3 my-3" onChange={this.handleDateChange} placeholder="Event Date" />
+                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleTypeChange} placeholder="Event Type" />
+                                <input type="text" className="work-input ps-3 my-3" onChange={this.handleDurationChange} placeholder="Duration" /> <br />
+                                <button className="btn btn-primary mt-5 work-submit" type="submit" data-bs-toggle="modal" data-bs-target="#ResponseModal">Confirm</button>
                             </form>
-                            <Congrats qrURL="{this.state.qrURL}" />
+                            <Congrats qrURL={this.state.qrURL} />
                         </div>
                     </div>
                 </div>
