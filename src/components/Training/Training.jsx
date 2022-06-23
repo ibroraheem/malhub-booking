@@ -125,9 +125,9 @@ export default class Training extends React.Component {
                     </div>
                     <div className="register-button mt-5">
 
-                        <button type="button" className="btn register btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <a role="button" className="btn register btn-primary" data-bs-toggle="modal" href="#staticBackdrop">
                             Register Now
-                        </button>
+                        </a>
                         <div className="modal fade .modal-fullscreen-xxl-down" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div className="modal-dialog">
                                 <div className="modal-content">
@@ -152,13 +152,15 @@ export default class Training extends React.Component {
                                                 <option value="Product Design">Product Design</option>
                                             </select>
                                             <input className="form-input ps-3 mb-3" placeholder="3 Months" readOnly />
-                                            <button type="submit" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ResponseModal">Confirm</button>
+                                            <div className="text-center">
+                                                <button type="submit" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ResponseModal">Confirm</button>
+                                            </div>
                                         </form>
-                                        <Congrats qrURL={this.state.qrURL} />
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <Congrats qrURL={this.state.qrURL} />
                     </div>
                 </div>
                 <Footer />
