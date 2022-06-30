@@ -1,35 +1,39 @@
-body{
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
 }
 .hero {
   background: url("../../images/hero-img.png") no-repeat;
   background-size: cover;
   min-height: 80vh;
-  padding: 20vh 5vh;
 }
-
 
 .hero-content h1 {
   font-weight: 800;
   font-size: 3em;
-  padding-top: 20vh 5vh;
   width: 100%;
 }
 .hero-content p {
   font-size: 1.2em;
-  
-  padding-top: 2vh;
-
 }
-.hero-content .btn{
+.hero-content .btn {
   margin-top: 5vh;
   cursor: pointer;
 }
 
-.btn-primary{
-    background: #00AFEF !important;
-    border-color: #00AFEF !important;
+.btn-primary {
+  background: #00afef !important;
+  border-color: #00afef !important;
 }
-.text-primary{
-    color: #00AFEF !important;
+.text-primary {
+  color: #00afef !important;
+}
+@media screen and (max-width: 1024px) {
+  .hero-content h1 {
+    font-weight: 600;
+    font-size: 2em;
+    width: 100%;
+  }
+  .hero-content p {
+    font-size: 1em;
+  }
 }

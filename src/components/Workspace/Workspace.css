@@ -2,8 +2,7 @@
   background-image: url(../../images/training-hero.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 90vh;
-  padding: 0vh 5vh;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -16,7 +15,7 @@
 }
 
 .work-hero-content-wrapper p {
-  margin-top: 5vh
+  margin-top: 5vh;
 }
 .workspace-content {
   width: 90%;
@@ -46,4 +45,16 @@
 .work-submit {
   margin: 0 auto;
   padding: 0.5em 2em;
+}
+
+@media screen and (max-width: 1024px) {
+  .workspace-content {
+    width: 98%;
+  }
+  .work-input {
+    width: 100%;
+  }
+  .workspace-text p {
+    width: 100%;
+  }
 }

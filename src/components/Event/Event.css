@@ -1,23 +1,27 @@
-.event-hero{
-    background: url("../../images/event-2.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 92vh;
-    padding: 20vh 5vh;
+.event-hero {
+  background: url("../../images/event-2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 92vh;
 }
 
-.event-hero h1{
-    font-weight: 900;
-    
+.event-hero h1 {
+  font-weight: 900;
 }
-.event-hero p{
-    margin-top: 5vh;
+.event-hero p {
+  margin-top: 5vh;
 }
-.event-hero button{
-    margin-top: 5vh;
-    cursor: pointer;
+.event-hero button {
+  margin-top: 5vh;
+  cursor: pointer;
 }
-.workspace-form p{
-    width: 80%;
-    margin: 0 auto;
+.workspace-form p {
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .event .title {
+    font-size: 20px;
+  }
 }

@@ -11,6 +11,12 @@
   font-size: 1.5em;
 }
 
-.card-text{
+.card-text {
   font-size: 1.2em;
+}
+@media screen and (max-width: 1024px) {
+  .title {
+    font-weight: 700;
+    font-size: 2em;
+  }
 }

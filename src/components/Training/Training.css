@@ -1,35 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500;700;900&display=swap");
 .training-hero {
-  background: url("../../images/Vector.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.445)),
+    url("../../images/Vector.png");
   min-height: 85vh;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 30vh;
-  padding-bottom: 30vh;
-  width: 100%;
 }
 .training-hero h1,
 .training-hero p {
   margin: auto;
   width: 80%;
-  margin-top: 2vh;
+  margin-top: 20px;
 }
 
 .training-hero p {
-
   padding-bottom: 8vh;
 }
 .training-content {
-
   margin: auto;
   padding-bottom: 10vh;
 }
 .what-title {
-    font-size: 3em;
+  font-size: 3em;
 }
 .word-container {
   margin: auto;
-  
 }
 
 .word-container p {
@@ -51,9 +46,8 @@ select {
   border: 3px solid #00afef;
   border-radius: 7px;
   color: #a3a2a2;
-  
 }
-.form-input:focus{
+.form-input:focus {
   border: 3px solid #00afef;
 }
 ::placeholder {
@@ -63,4 +57,18 @@ select {
 .modal-body p {
   font-size: 1.2em;
   width: 80%;
+}
+
+@media screen and (max-width: 1024px) {
+  .training-hero h1,
+  .training-content h1,
+  .training-content p,
+  .training-hero p {
+    text-align: left !important;
+    width: 100%;
+  }
+  .what-title {
+    font-size: 2em;
+    margin-bottom: -40px !important;
+  }
 }
